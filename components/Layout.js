@@ -14,9 +14,11 @@ export default function Layout({ children }) {
       {/* Header / Nav */}
       <header className="site-header">
         <div className="header-inner">
-          <Link href="/" className="site-brand">
-            <img src="/yultimate-logo.png" alt="Y-Ultimate Logo" />
-            <span>Y-Ultimate</span>
+          <Link href="/" className="site-brand" legacyBehavior>
+            <a>
+              <img src="/yultimate-logo.png" alt="Y-Ultimate Logo" />
+              <span>Y-Ultimate</span>
+            </a>
           </Link>
 
           <div className="nav">
@@ -33,10 +35,10 @@ export default function Layout({ children }) {
             </button>
 
             <div id="primary-navigation" className={`nav-links ${open ? 'open' : 'mobile-hidden'}`} onClick={() => { setOpen(false); setMoreOpen(false); }}>
-              <Link href="/" className="nav-link">HOME</Link>
-              <Link href="/tracking" className="nav-link">TRACK</Link>
-              <Link href="/tools" className="nav-link">TOOLS</Link>
-              <Link href="/resource" className="nav-link">RESOURCES</Link>
+              <Link href="/" legacyBehavior><a className="nav-link">HOME</a></Link>
+              <Link href="/tracking" legacyBehavior><a className="nav-link">TRACK</a></Link>
+              <Link href="/tools" legacyBehavior><a className="nav-link">TOOLS</a></Link>
+              <Link href="/resource" legacyBehavior><a className="nav-link">RESOURCES</a></Link>
 
               {/* More dropdown contains less-frequent links to keep header short */}
               <div className="more-menu" onClick={(e) => e.stopPropagation()}>
@@ -51,8 +53,8 @@ export default function Layout({ children }) {
                 </button>
 
                 <div className={`more-list ${moreOpen ? 'open' : ''}`} role="menu" aria-hidden={!moreOpen}>
-                  <Link href="/student-coach" className="nav-link" role="menuitem">STUDENT/COACH</Link>
-                  <Link href="/tournament-overview" className="nav-link" role="menuitem">TOURNAMENTS</Link>
+                  <Link href="/student-coach" legacyBehavior><a className="nav-link" role="menuitem">STUDENT/COACH</a></Link>
+                  <Link href="/tournament-overview" legacyBehavior><a className="nav-link" role="menuitem">TOURNAMENTS</a></Link>
                 </div>
               </div>
             </div>
